@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Student Registration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <h1>Student Registration</h1>
+      <p>Fill in every field. Fields marked with * are required.</p>
+    </header>
+
+    <div id="successMessage" class="success hidden" role="status" aria-live="polite">
+      Registration successful! Welcome aboard.
+    </div>
+
+    <form id="registrationForm" novalidate>
+
+      <div class="grid">
+        <div class="field">
+          <label for="studentId">Student ID *</label>
+          <input type="text" id="studentId" name="studentId" placeholder="e.g. 12345"
+                 data-label="Student ID" data-hint="Use exactly 5 digits (e.g. 12345).">
+          <small class="error-message" id="studentIdError"></small>
+        </div>
+
+        <div class="field">
+          <label for="fullName">Full Name *</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Juan Dela Cruz"
+                 data-label="Full name" data-hint="Use letters only (min. 2 characters).">
+          <small class="error-message" id="fullNameError"></small>
+        </div>
+
+        <div class="field">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" placeholder="juan@example.com"
+                 data-label="Email" data-hint="Enter a valid email like name@example.com.">
+          <small class="error-message" id="emailError"></small>
+        </div>
+
+        <div class="field">
+          <label for="phone">Phone Number *</label>
+          <input type="tel" id="phone" name="phone" placeholder="09123456789 or +639123456789"
+                 data-label="Phone number" data-hint="Use 09XXXXXXXXX or +639XXXXXXXXX.">
+          <small class="error-message" id="phoneError"></small>
+        </div>
+
+        <div class="field">
+          <label for="dob">Date of Birth *</label>
+          <input type="date" id="dob" name="dob" data-label="Date of birth">
+          <small class="error-message" id="dobError"></small>
+        </div>
+
+        <div class="field" id="genderField">
+          <span class="label" id="genderLabel">Gender *</span>
+          <div class="radio-group" role="radiogroup" aria-labelledby="genderLabel">
+            <label class="radio"><input type="radio" name="gender" value="Male"> Male</label>
+            <label class="radio"><input type="radio" name="gender" value="Female"> Female</label>
+            <label class="radio"><input type="radio" name="gender" value="Other"> Other</label>
+          </div>
+          <small class="error-message" id="genderError"></small>
+        </div>
+
+        <div class="field">
+          <label for="program">Program *</label>
+          <select id="program" name="program" data-label="Program">
+            <option value="">Select a program</option>
+            <option value="BSIT">BS Information Technology</option>
+            <option value="BSCS">BS Computer Science</option>
+            <option value="BSBA">BS Business Administration</option>
+            <option value="BSED">BS Education</option>
+            <option value="BSN">BS Nursing</option>
+          </select>
+          <small class="error-message" id="programError"></small>
+        </div>
+
+        <div class="field">
+          <label for="yearLevel">Year Level *</label>
+          <select id="yearLevel" name="yearLevel" data-label="Year level">
+            <option value="">Select year level</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+          <small class="error-message" id="yearLevelError"></small>
+        </div>
+
+        <div class="field">
+          <label for="password">Password *</label>
+          <div class="password-wrap">
+            <input type="password" id="password" name="password" placeholder="At least 8 characters"
+                   data-label="Password" data-hint="Use at least 8 characters with a letter and a number.">
+            <button type="button" class="toggle-btn" data-target="password" aria-pressed="false">Show</button>
+          </div>
+          <small class="error-message" id="passwordError"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirmPassword">Confirm Password *</label>
+          <div class="password-wrap">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Re-enter password"
+                   data-label="Confirm password">
+            <button type="button" class="toggle-btn" data-target="confirmPassword" aria-pressed="false">Show</button>
+          </div>
+          <small class="error-message" id="confirmPasswordError"></small>
+        </div>
+
+        <div class="field full">
+          <label for="address">Address *</label>
+          <textarea id="address" name="address" rows="3" placeholder="House no., street, barangay, city, province"
+                    data-label="Address" data-hint="Enter at least 10 characters."></textarea>
+          <small class="error-message" id="addressError"></small>
+        </div>
+
+        <div class="field full" id="agreementField">
+          <label class="checkbox">
+            <input type="checkbox" id="agreement" name="agreement" data-label="Agreement">
+            I confirm that the information above is correct and I agree to the school's terms.
+          </label>
+          <small class="error-message" id="agreementError"></small>
+        </div>
+      </div>
+
+      <div class="actions">
+        <button type="submit" class="btn primary">Register</button>
+        <button type="reset" class="btn secondary">Reset</button>
+      </div>
+    </form>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
